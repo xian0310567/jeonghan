@@ -1,10 +1,15 @@
 .container {
-  height: 80px;
+  height: 60px;
   background: #fff;
   box-shadow: 0 0 5px #ccc;
-  padding: 30px;
+  padding: 23px;
   box-sizing: border-box;
+}
+
+.sizedContainer {
   display: flex;
+  width: 1240px;
+  margin: 0 auto;
 }
 
 .menu {
@@ -13,7 +18,7 @@
 
 .menu li {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 30px;
   cursor: pointer;
 }
