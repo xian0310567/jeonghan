@@ -1,8 +1,44 @@
+.container {
+  padding: 50px 70px;
+  display: flex;
+  border: 1px solid #ddd;
+}
+
 .image {
   background-image: url("https://avatars.githubusercontent.com/u/45549880?v=4");
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
+}
+
+.description {
+  padding-top: 20px;
+  padding-left: 60px;
+}
+
+.description h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.description span {
+  color: #888;
+  line-height: 1.4;
+}
+
+.contact {
+  margin-top: 15px;
+}
+
+.contact img {
+  cursor: pointer;
+  opacity: 0.3;
+  transition: 0.5s;
+}
+
+.contact img:hover {
+  opacity: 1;
 }

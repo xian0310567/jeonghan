@@ -5,7 +5,7 @@ import AboutCard from "@/components/feature/about/AboutCard/AboutCard";
 const about = () => {
   return (
     <div>
-      <AboutCard></AboutCard>
+      <AboutCard />
     </div>
   );
 };
