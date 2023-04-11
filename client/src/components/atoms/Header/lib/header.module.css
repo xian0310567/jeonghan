@@ -1,0 +1,15 @@
+.header {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 900;
+}
+
+.description {
+  display: block;
+  margin-top: 20px;
+  opacity: 0.7;
+}
