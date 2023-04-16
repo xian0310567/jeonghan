@@ -15,7 +15,7 @@
 /out/
 
 # prisma
-/server/prisma/migrations
+/prisma/migrations
 
 # production
 /build
