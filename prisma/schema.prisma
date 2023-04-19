@@ -8,34 +8,19 @@ datasource db {
 }
 
 model Posts {
-  id        Int      @id @default(autoincrement())
-  title     String   @db.VarChar(255)
+  id        Int           @id @default(autoincrement())
+  title     String        @db.VarChar(255)
   content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  commentCount Int
-  heartCount Int
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @default(now()) @updatedAt
+  commentCount Int        @default(0)
+  heartCount Int          @default(0)
   thumbnailImage String
-  comments Comments?
+  comments Comments[]
 }
 
 model Comments {
   id        Int      @id @default(autoincrement())
-  post      Posts     @relation(fields: [postID], references: [id])
+  post      Posts    @relation(fields: [postID], references: [id])
   postID    Int      @unique
 }
-
-// model Profile {
-//   id     Int     @id @default(autoincrement())
-//   bio    String?
-//   user   User    @relation(fields: [userId], references: [id])
-//   userId Int     @unique
-// }
-
-// model User {
-//   id      Int      @id @default(autoincrement())
-//   email   String   @unique
-//   name    String?
-//   posts   Post[]
-//   profile Profile?
-// }
