@@ -26,6 +26,15 @@ const Header = () => {
           <li>
             <span>Blog</span>
           </li>
+          <li>
+            <span
+              onClick={() => {
+                routePath("/problemSolving");
+              }}
+            >
+              PS
+            </span>
+          </li>
           <li
             onClick={() => {
               routePath("/about");
