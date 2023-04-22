@@ -2,7 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const DynamicEditor = dynamic(
-  () => import("@/components/atoms/MarkdownEditor"),
+  () => import("@/components/feature/editPosts/MarkdownEditor"),
   { ssr: false }
 );
 
