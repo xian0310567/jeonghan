@@ -44,9 +44,8 @@ const MarkdownEditor = () => {
       initialValue=""
       placeholder="글을 작성해주세요!"
       initialEditType="markdown"
-      previewStyle="tab"
+      previewStyle="vertical"
       height="60rem"
-      theme={"dark"}
       toolbarItems={toolbarItems}
       plugins={[colorSyntax]}
       //   hooks={{ addImageBlobHook: onUploadImage }}
