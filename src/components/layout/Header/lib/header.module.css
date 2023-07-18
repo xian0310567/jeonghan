@@ -11,14 +11,3 @@
   width: 1240px;
   margin: 0 auto;
 }
-
-.menu {
-  display: flex;
-}
-
-.menu li {
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 30px;
-  cursor: pointer;
-}
