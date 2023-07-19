@@ -7,7 +7,7 @@ export const create = async (req: NextApiRequest, res: NextApiResponse) => {
   const createPost = await prisma.posts.create({
     data: {
       title: req.body.title,
-      content: req.body.content,
+      contents: req.body.content,
       thumbnailImage: req.body.thumbnailImage,
     },
   });
