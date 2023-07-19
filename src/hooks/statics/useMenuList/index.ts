@@ -1,3 +1,3 @@
 export { default } from "./useMenuList";
 
-export type * from "./lib/useMenuList";
+export type { MenuListCallback } from "./lib/useMenuList";
