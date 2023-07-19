@@ -1,4 +1,5 @@
 import React from "react";
+import { useS3Upload } from "next-s3-upload";
 
 import { Editor } from "@toast-ui/react-editor";
 import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
@@ -7,6 +8,7 @@ import "@toast-ui/editor/dist/toastui-editor.css";
 import "@toast-ui/editor/dist/theme/toastui-editor-dark.css";
 
 const MarkdownEditor = () => {
+  const { uploadToS3 } = useS3Upload();
   const editorRef = React.useRef(null);
   const toolbarItems = [
     ["heading", "bold", "italic", "strike"],
@@ -18,25 +20,13 @@ const MarkdownEditor = () => {
     ["scrollSync"],
   ];
 
-  //   const onUploadImage = async (blob, callback) => {
-  //     // blob은 base64 인코딩된 이미지 파일
-  //     // formData에 담아 서버로 보내고, 서버에서는 s3에 이미지 저장후 s3에서 url을 받아 다시 프론트로 값 전송
-  //     const formData = new FormData()
-  //     formData.append('image', blob)
-  //     try {
-  //         const imageRes = await apiInstance.post('/image', formData, {
-  //             headers: {
-  //                 'Content-Type': 'multipart/form-data',
-  //             },
-  //         })
-  //         const image_URL = imageRes.data.imageURL
-  //         setImage(image_URL)
-  //         // 글 화면에 이미지 띄우기
-  //         callback(image_URL, 'image')
-  //     } catch (e) {
-  //         console.error(e.response)
-  //     }
-  // }
+  type HookCallback = (url: string, text?: string) => void;
+
+  const onUploadImage = async (file: File | Blob, callback: HookCallback) => {
+    const { url } = await uploadToS3(file as File);
+
+    callback(url, "image");
+  };
 
   return (
     <Editor
@@ -48,7 +38,7 @@ const MarkdownEditor = () => {
       height="60rem"
       toolbarItems={toolbarItems}
       plugins={[colorSyntax]}
-      //   hooks={{ addImageBlobHook: onUploadImage }}
+      hooks={{ addImageBlobHook: onUploadImage }}
     />
   );
 };
