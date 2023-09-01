@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@next/font": "13.3.0",
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^5.2.0",
     "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
     "@toast-ui/react-editor": "^3.2.3",
     "@types/node": "18.15.11",
@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "prisma": "^5.0.0"
+    "prisma": "^5.2.0"
   }
 }
