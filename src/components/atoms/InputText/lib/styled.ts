@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { InputTextProps } from "./InputText";
 
 export default () => {
-  const Container = styled.div`
-    margin-bottom: 15px;
-  `;
+  const Container = styled.div``;
   const Input = styled.input<InputTextProps>`
     min-width: ${(props) => (props.width ? props.width + "em" : "200px")};
     border-radius: 10px;
