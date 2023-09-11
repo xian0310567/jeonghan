@@ -2,14 +2,15 @@ import React from "react";
 import { useS3Upload } from "next-s3-upload";
 
 import { Editor } from "@toast-ui/react-editor";
+import { MarkdownEditorProps } from "./lib/MarkdownEditor";
 import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
 
 import "@toast-ui/editor/dist/toastui-editor.css";
 import "@toast-ui/editor/dist/theme/toastui-editor-dark.css";
 
-const MarkdownEditor = () => {
+const MarkdownEditor = (props: MarkdownEditorProps) => {
   const { uploadToS3 } = useS3Upload();
-  const editorRef = React.useRef(null);
+  const editorRef = React.useRef<any>(null);
   const toolbarItems = [
     ["heading", "bold", "italic", "strike"],
     ["hr"],
@@ -19,6 +20,10 @@ const MarkdownEditor = () => {
     ["code"],
     ["scrollSync"],
   ];
+
+  const handleChange = () => {
+    props.contents.set(editorRef.current?.getInstance().getHTML());
+  };
 
   type HookCallback = (url: string, text?: string) => void;
 
@@ -36,6 +41,7 @@ const MarkdownEditor = () => {
       initialEditType="markdown"
       previewStyle="vertical"
       height="60rem"
+      onChange={handleChange}
       toolbarItems={toolbarItems}
       plugins={[colorSyntax]}
       hooks={{ addImageBlobHook: onUploadImage }}

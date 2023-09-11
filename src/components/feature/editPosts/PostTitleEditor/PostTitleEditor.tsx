@@ -3,15 +3,29 @@ import React from "react";
 import Upload from "@/components/atoms/Upload";
 import TextInput from "@/components/atoms/InputText";
 
+import { PostTitleEditorProps } from "./lib/PostTitleEditor";
+
 import styled from "./lib/styled";
 
 const { Container } = styled();
 
-const PostTitleEditor = () => {
+const PostTitleEditor = (props: PostTitleEditorProps) => {
   return (
     <Container>
-      <TextInput placeholder="제목을 입력해주세요.">제목</TextInput>
-      <Upload>upload</Upload>
+      <TextInput
+        placeholder="제목을 입력해주세요."
+        onChange={(e) => props.title.set(e.target.value)}
+      >
+        {props.title.get()}
+      </TextInput>
+      <Upload
+        onChange={(e) => {
+          if (e.target.files?.item)
+            props.thumbnailImage.set(e.target.files?.item(0));
+        }}
+      >
+        upload
+      </Upload>
     </Container>
   );
 };
