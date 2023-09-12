@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 import githubIcon from "@/assets/github.svg";
@@ -20,12 +21,14 @@ const AboutCard = () => {
           향상시키는데에 관심이 많습니다
         </span>
         <div className={styled.contact}>
-          <Image
-            src={githubIcon}
-            width={20}
-            height={20}
-            alt="github 바로가기"
-          />
+          <Link href="https://github.com/xian0310567" type="_blank">
+            <Image
+              src={githubIcon}
+              width={20}
+              height={20}
+              alt="github 바로가기"
+            />
+          </Link>
         </div>
       </div>
     </div>
