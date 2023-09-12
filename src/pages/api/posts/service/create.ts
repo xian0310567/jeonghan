@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const create = async (req: NextApiRequest, res: NextApiResponse) => {
+const create = async (req: NextApiRequest, res: NextApiResponse) => {
   const createPost = await prisma.posts.create({
     data: {
       title: req.body.title,
@@ -14,3 +14,5 @@ export const create = async (req: NextApiRequest, res: NextApiResponse) => {
 
   return res.status(200).send(createPost);
 };
+
+export default create;
