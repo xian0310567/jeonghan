@@ -5,7 +5,7 @@ import { SubmitPostStateCallback } from "./lib/useSubmitPostState";
 const useSubmitPostState = (): SubmitPostStateCallback => {
   const [title, setTitle] = useState<string>("");
   const [contents, setContents] = useState<string>("");
-  const [thumbnailImage, setThumbnailImage] = useState<string>("");
+  const [thumbnailImage, setThumbnailImage] = useState<File | null>(null);
 
   return {
     title: {

@@ -1,10 +1,8 @@
 import React from "react";
 
-import styled from "./lib/styled";
-
 import { InputTextProps } from "./lib/InputText";
 
-const { Container, Input } = styled();
+import { Container, Input } from "./lib/styled";
 
 const InputText = (props: InputTextProps) => {
   return (

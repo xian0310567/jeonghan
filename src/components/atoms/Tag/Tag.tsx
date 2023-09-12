@@ -1,10 +1,8 @@
 import React from "react";
 
-import styled from "./lib/styled";
-
 import { TagProps } from "./lib/Tag";
 
-const { Container, Title } = styled();
+import { Container, Title } from "./lib/styled";
 
 const Tag = (props: TagProps) => {
   return (

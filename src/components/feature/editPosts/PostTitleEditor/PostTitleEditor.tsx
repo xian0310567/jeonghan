@@ -5,9 +5,7 @@ import TextInput from "@/components/atoms/InputText";
 
 import { PostTitleEditorProps } from "./lib/PostTitleEditor";
 
-import styled from "./lib/styled";
-
-const { Container } = styled();
+import { Container } from "./lib/styled";
 
 const PostTitleEditor = (props: PostTitleEditorProps) => {
   return (

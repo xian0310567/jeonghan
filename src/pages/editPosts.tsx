@@ -11,16 +11,16 @@ const DynamicEditor = dynamic(
   { ssr: false }
 );
 
-const editPosts = () => {
-  const { title, contents, thumbnailImage, submitPost } = useSubmitPost();
+const EditPosts = () => {
+  const { title, contents, thumbnailImage, usePublishPost } = useSubmitPost();
 
   return (
     <div>
       <PostTitleEditor title={title} thumbnailImage={thumbnailImage} />
       <DynamicEditor contents={contents} />
-      <SubmitPost submitPost={submitPost} />
+      <SubmitPost usePublishPost={usePublishPost} />
     </div>
   );
 };
 
-export default editPosts;
+export default EditPosts;

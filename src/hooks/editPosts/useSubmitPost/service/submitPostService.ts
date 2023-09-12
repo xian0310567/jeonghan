@@ -5,11 +5,11 @@ import { useS3Upload } from "next-s3-upload";
 
 import { SubmitPostStateCallback } from "../lib/useSubmitPostState";
 
-const submitPostService = (state: SubmitPostStateCallback) => {
+const useSubmitPostService = (state: SubmitPostStateCallback) => {
   const router = useRouter();
   const { uploadToS3 } = useS3Upload();
 
-  const submitPost = async () => {
+  const usePublishPost = async () => {
     const { url } = await uploadToS3(state.thumbnailImage.get() as File);
 
     axios
@@ -24,7 +24,7 @@ const submitPostService = (state: SubmitPostStateCallback) => {
       });
   };
 
-  return { submitPost };
+  return { usePublishPost };
 };
 
-export default submitPostService;
+export default useSubmitPostService;

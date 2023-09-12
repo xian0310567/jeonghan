@@ -1,15 +1,15 @@
 import useSubmitPostState from "./useSubmitPostState";
 
-import submitPostService from "./service/submitPostService";
+import useSubmitPostService from "./service/submitPostService";
 
 import { SubmitPostCallback } from "./lib/useSubmitPost";
 
 const useSubmitPost = (): SubmitPostCallback => {
   const state = useSubmitPostState();
 
-  const { submitPost } = submitPostService(state);
+  const { usePublishPost } = useSubmitPostService(state);
 
-  return { ...state, submitPost };
+  return { ...state, usePublishPost };
 };
 
 export default useSubmitPost;

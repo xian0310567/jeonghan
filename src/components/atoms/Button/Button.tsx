@@ -1,10 +1,8 @@
 import React from "react";
 
-import styled from "./lib/styled";
-
 import { ButtonProps } from "./lib/Button";
 
-const { Button } = styled();
+import { Button } from "./lib/styled";
 
 const ButtonComponent = (props: ButtonProps) => {
   return (
