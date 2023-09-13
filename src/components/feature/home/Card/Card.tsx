@@ -13,10 +13,10 @@ const Card = ({ item }: { item: CardProps }) => {
       <div className={styled.thumbNail} />
       <div className={styled.text}>
         <h4>{item.title}</h4>
-        <span className="">{item.body}</span>
+        <span className="">{item.contents}</span>
       </div>
       <div className={styled.footer}>
-        <span className={styled.date}>{item.date}</span>
+        <span className={styled.date}>{item.createdAt.toString()}</span>
         <div className={styled.like}>
           <Image src={heart} alt="" width={16} height={16} />
           <span>{item.heartCount}</span>
