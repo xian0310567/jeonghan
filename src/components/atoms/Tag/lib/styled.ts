@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ pointer: boolean }>`
-  background-color: #5178ee;
+export const Container = styled.div<{ toggle: boolean }>`
+  background-color: ${(props) => (props.toggle ? "#5178ee" : "#a0b2e8")};
   padding: 6px 12px;
   display: inline-block;
   border-radius: 20px;
-  cursor: ${(props) => (props.pointer ? "pointer" : "normal")};
+  cursor: pointer;
 `;
 
 export const Title = styled.span`
