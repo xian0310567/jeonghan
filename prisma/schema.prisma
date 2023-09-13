@@ -17,10 +17,18 @@ model Posts {
   heartCount Int          @default(0)
   thumbnailImage String
   comments Comments[]
+  tag      Tag[]
 }
 
 model Comments {
   id        Int      @id @default(autoincrement())
   post      Posts    @relation(fields: [postID], references: [id])
   postID    Int      @unique
+}
+
+model Tag {
+  id        Int     @id @default(autoincrement())
+  tag       String   
+  post      Posts   @relation(fields: [postID], references: [id])
+  postID    Int     @unique
 }
