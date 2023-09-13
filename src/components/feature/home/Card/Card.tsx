@@ -5,24 +5,31 @@ import { CardProps } from "./lib/Card.interface";
 
 import heart from "@/assets/heart.svg";
 
-import styled from "./lib/card.module.css";
+import {
+  Container,
+  ThumbNail,
+  TextContainer,
+  Footer,
+  CreateDate,
+  LikeHeart,
+} from "./lib/styled";
 
 const Card = ({ item }: { item: CardProps }) => {
   return (
-    <div className={styled.card}>
-      <div className={styled.thumbNail} />
-      <div className={styled.text}>
+    <Container>
+      <ThumbNail image={item.thumbnailImage} />
+      <TextContainer>
         <h4>{item.title}</h4>
-        <span className="">{item.contents}</span>
-      </div>
-      <div className={styled.footer}>
-        <span className={styled.date}>{item.createdAt.toString()}</span>
-        <div className={styled.like}>
+        <span>{item.contents}</span>
+      </TextContainer>
+      <Footer>
+        <CreateDate>{item.createdAt.toString()}</CreateDate>
+        <LikeHeart>
           <Image src={heart} alt="" width={16} height={16} />
           <span>{item.heartCount}</span>
-        </div>
-      </div>
-    </div>
+        </LikeHeart>
+      </Footer>
+    </Container>
   );
 };
 
