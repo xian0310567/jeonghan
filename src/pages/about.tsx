@@ -1,14 +1,15 @@
 import React from "react";
 
+import Container from "@/components/atoms/Container";
 import AboutCard from "@/components/feature/about/AboutCard/AboutCard";
 import Description from "@/components/feature/about/Description/Description";
 
 const about = () => {
   return (
-    <div>
+    <Container>
       <AboutCard />
       <Description />
-    </div>
+    </Container>
   );
 };
 
