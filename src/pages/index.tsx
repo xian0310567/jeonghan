@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { PrismaClient } from "@prisma/client";
 
-import Header from "@/components/atoms/Header";
+import Header from "@/components/feature/home/Header";
 import CardView, { CardViewProps } from "@/components/feature/home/CardView";
 
 export default function Home({ items }: CardViewProps) {
