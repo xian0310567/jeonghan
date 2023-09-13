@@ -22,7 +22,7 @@ const MarkdownEditor = (props: MarkdownEditorProps) => {
   ];
 
   const handleChange = () => {
-    props.contents.set(editorRef.current?.getInstance().getHTML());
+    props.contents.set(editorRef.current?.getInstance().getMarkdown());
   };
 
   type HookCallback = (url: string, text?: string) => void;
