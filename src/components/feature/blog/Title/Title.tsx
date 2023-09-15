@@ -3,11 +3,13 @@ import React from "react";
 import Header from "@/components/atoms/Header";
 import PostTags from "@/components/feature/blog/PostTags";
 
-const Title = () => {
+import { TitleProps } from "./lib/Title";
+
+const Title = (props: TitleProps) => {
   return (
     <div>
       <Header title="Blog">
-        <PostTags />
+        <PostTags tags={props.tags} />
       </Header>
     </div>
   );

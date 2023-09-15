@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { TagProps } from "./lib/Tag";
 
-import { Container, Title } from "./lib/styled";
+import { Container, Title, Count } from "./lib/styled";
 
 const Tag = (props: TagProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -16,6 +16,7 @@ const Tag = (props: TagProps) => {
       }}
     >
       <Title>{props.children}</Title>
+      <Count>{props.length}</Count>
     </Container>
   );
 };

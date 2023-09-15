@@ -2,10 +2,16 @@ import React from "react";
 
 import Tag from "@/components/atoms/Tag";
 
-const PostTags = () => {
+import { PostTagsProps } from "./lib/PostTags";
+
+const PostTags = (props: PostTagsProps) => {
   return (
     <div>
-      <Tag>개발</Tag>
+      {props.tags.map((tag, index) => (
+        <Tag key={index} length={tag.length}>
+          #{tag.tag}
+        </Tag>
+      ))}
     </div>
   );
 };

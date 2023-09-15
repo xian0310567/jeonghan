@@ -7,10 +7,9 @@ import Title from "@/components/feature/blog/Title";
 import useTags, { TagListCallback } from "@/hooks/blog/useTags";
 
 const blog = (props: { tags: TagListCallback[] }) => {
-  console.log(props.tags);
   return (
     <>
-      <Title />
+      <Title tags={props.tags} />
       <Container></Container>
     </>
   );
