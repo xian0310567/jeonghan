@@ -1,9 +1,9 @@
 import React from "react";
 
-import styled from "./lib/container.module.css";
+import { Container as SContainer } from "./lib/styled";
 
 const Container = ({ children }: { children?: React.ReactNode }) => {
-  return <div className={styled.container}>{children}</div>;
+  return <SContainer>{children}</SContainer>;
 };
 
 export default Container;
