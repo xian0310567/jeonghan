@@ -23,12 +23,12 @@ model Posts {
 model Comments {
   id        Int      @id @default(autoincrement())
   post      Posts    @relation(fields: [postID], references: [id])
-  postID    Int      @unique
+  postID    Int
 }
 
 model Tag {
   id        Int     @id @default(autoincrement())
   tag       String   
   post      Posts   @relation(fields: [postID], references: [id])
-  postID    Int     @unique
+  postID    Int
 }
