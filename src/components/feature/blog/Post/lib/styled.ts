@@ -17,7 +17,6 @@ export const Thumbnail = styled.div<{ image: string }>`
 `;
 
 export const TitleContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
