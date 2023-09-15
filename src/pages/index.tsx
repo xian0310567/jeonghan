@@ -1,31 +1,28 @@
 import Head from "next/head";
-import { PrismaClient } from "@prisma/client";
 
 import Container from "@/components/atoms/Container";
 import Header from "@/components/feature/home/Header";
-import CardView, { CardViewProps } from "@/components/feature/home/CardView";
+import CardView from "@/components/feature/home/CardView";
 
-export default function Home({ items }: CardViewProps) {
+import usePosts, { PostsCallback } from "@/hooks/blog/usePosts";
+
+export default function Home(props: { posts: PostsCallback }) {
   return (
     <Container>
       <Header description="내가 정한것을 좋아하는 정한 👋">jeonghan_log</Header>
-      <CardView items={items} />
+      <CardView posts={props.posts} />
     </Container>
   );
 }
 
-const prisma = new PrismaClient();
-
 export const getServerSideProps = async () => {
-  const posts = await prisma.posts.findMany({
-    orderBy: { heartCount: "desc" },
-  });
+  const posts = await usePosts();
 
   const bestPosts = posts.filter((post, index) => index < 4);
 
   return {
     props: {
-      items: JSON.parse(JSON.stringify(bestPosts)),
+      posts: bestPosts,
     },
   };
 };

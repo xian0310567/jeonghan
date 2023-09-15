@@ -1,3 +1,3 @@
-import { PostsStateCallback } from "./usePostsState";
+import { Posts } from "@prisma/client";
 
-export type PostsCallback = PostsStateCallback & {};
+export type PostsCallback = Posts[];

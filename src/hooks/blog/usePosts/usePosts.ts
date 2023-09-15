@@ -1,13 +1,13 @@
-import usePostsState from "./usePostsState";
-import usePostsServer from "./usePostsServer";
+import { PrismaClient } from "@prisma/client";
 
 import { PostsCallback } from "./lib/usePosts";
 
-const usePosts = (): PostsCallback => {
-  const state = usePostsState();
-  const server = usePostsServer(state);
+const usePosts = async (): Promise<PostsCallback> => {
+  const prisma = new PrismaClient();
 
-  return state;
+  const posts: PostsCallback = await prisma.posts.findMany();
+
+  return JSON.parse(JSON.stringify(posts));
 };
 
 export default usePosts;
