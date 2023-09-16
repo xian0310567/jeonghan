@@ -8,7 +8,6 @@ import useTags, { TagListCallback } from "@/hooks/blog/useTags";
 import usePosts, { PostsCallback } from "@/hooks/blog/usePosts";
 
 const blog = (props: { tags: TagListCallback[]; posts: PostsCallback[] }) => {
-  console.log(props.posts);
   return (
     <>
       <Title tags={props.tags} />
