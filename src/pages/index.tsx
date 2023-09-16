@@ -6,7 +6,7 @@ import CardView from "@/components/feature/home/CardView";
 
 import usePosts, { PostsCallback } from "@/hooks/blog/usePosts";
 
-export default function Home(props: { posts: PostsCallback }) {
+export default function Home(props: { posts: PostsCallback[] }) {
   return (
     <Container>
       <Header description="내가 정한것을 좋아하는 정한 👋">jeonghan_log</Header>

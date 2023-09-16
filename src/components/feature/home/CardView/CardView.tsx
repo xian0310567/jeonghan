@@ -7,7 +7,7 @@ import { PostsCallback } from "@/hooks/blog/usePosts";
 
 import styled from "./lib/cardView.module.css";
 
-const CardView = (props: { posts: PostsCallback }) => {
+const CardView = (props: { posts: PostsCallback[] }) => {
   return (
     <div className={styled.container}>
       {_.map(props.posts, (post, index) => (
