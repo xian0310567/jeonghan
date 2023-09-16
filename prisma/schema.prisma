@@ -10,7 +10,7 @@ datasource db {
 model Posts {
   id        Int           @id @default(autoincrement())
   title     String        @db.VarChar(255)
-  contents  String
+  contents  String        @db.Text
   createdAt DateTime      @default(now())
   updatedAt DateTime      @default(now()) @updatedAt
   commentCount Int        @default(0)

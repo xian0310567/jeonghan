@@ -1,3 +1,3 @@
 export { default } from "./usePosts";
 
-export type { PostsCallback } from "./lib/usePosts";
+export type { PostsCallback, PostsResponse } from "./lib/usePosts";

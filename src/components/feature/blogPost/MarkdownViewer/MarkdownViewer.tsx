@@ -1,15 +1,27 @@
 import React from "react";
+import Prism from "prismjs";
 
 import { Viewer } from "@toast-ui/react-editor";
+import codeSyntaxHighlight from "@toast-ui/editor-plugin-code-syntax-highlight";
+
+import { MarkdownViewerProps } from "./lib/MarkdownViewer";
+
+import { Container, Title } from "./lib/styled";
+
+import "prismjs/themes/prism.css";
 import "@toast-ui/editor/dist/toastui-editor-viewer.css";
 
-const MarkdownViewer = () => {
+const MarkdownViewer = (props: MarkdownViewerProps) => {
+  const post = props.post;
+
   return (
-    <Viewer
-      initialValue={
-        "## 안녕하세요이번엔 진짜로 마크다운으로 작성될것같아요그렇다면 좋겠네요 제발```javascript    const a =;```"
-      }
-    />
+    <Container>
+      <Title>{post.title}</Title>
+      <Viewer
+        initialValue={post.contents}
+        plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]}
+      />
+    </Container>
   );
 };
 
