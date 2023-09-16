@@ -14,7 +14,7 @@ import {
 const Post = (props: PostsProps) => {
   const router = useRouter();
 
-  const handleRoute = () => router.push("#");
+  const handleRoute = () => router.push(`/blog/${props.posts.id}`);
 
   const post = props.posts;
 
@@ -22,8 +22,8 @@ const Post = (props: PostsProps) => {
     <Container>
       <Thumbnail image={post.thumbnailImage} onClick={handleRoute} />
       <TitleContainer>
-        <Title>{post.title}</Title>
-        <Body>{post.contents}</Body>
+        <Title onClick={handleRoute}>{post.title}</Title>
+        <Body onClick={handleRoute}>{post.contents}</Body>
       </TitleContainer>
     </Container>
   );
