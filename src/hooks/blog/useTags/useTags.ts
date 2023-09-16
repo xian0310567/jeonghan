@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { PrismaClient } from "@prisma/client";
 
 import { TagListCallback } from "./lib/useTags";
@@ -12,7 +13,7 @@ const useTags = async () => {
     },
   });
 
-  const response: TagListCallback[] = tags.map((tag) => {
+  const response: TagListCallback[] = _.map(tags, (tag) => {
     return { tag: tag.tag, length: tag._count.tag };
   });
 

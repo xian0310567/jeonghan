@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 
 import Card from "@/components/feature/home/Card";
 
@@ -9,8 +10,8 @@ import styled from "./lib/cardView.module.css";
 const CardView = (props: { posts: PostsCallback }) => {
   return (
     <div className={styled.container}>
-      {props.posts.map((item, index) => (
-        <Card item={item} key={index} />
+      {_.map(props.posts, (post, index) => (
+        <Card item={post} key={index} />
       ))}
     </div>
   );

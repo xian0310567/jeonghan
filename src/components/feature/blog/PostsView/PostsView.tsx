@@ -8,7 +8,7 @@ import { PostsViewProps } from "./lib/PostsView";
 const PostsView = (props: PostsViewProps) => {
   return (
     <>
-      {props.posts.map((post) => (
+      {_.map(props.posts, (post) => (
         <Post posts={post} key={post.id} />
       ))}
     </>

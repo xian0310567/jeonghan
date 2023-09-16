@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
@@ -20,7 +21,7 @@ const HeaderMenu = ({ items }: { items: MenuListCallback[] }) => {
 
   return (
     <MenuContainer>
-      {items.map((item) => (
+      {_.map(items, (item) => (
         <Menu
           key={item.key}
           onClick={() => {
