@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 import Container from "@/components/atoms/Container";
+import CommentViewer from "@/components/feature/blogPost/CommentViewer";
 
 import usePost from "@/hooks/blog/usePost";
 
@@ -17,6 +18,7 @@ const post = (props: { post: PostsCallback }) => {
   return (
     <Container>
       <MarkdownViewer post={props.post} />
+      <CommentViewer />
     </Container>
   );
 };
