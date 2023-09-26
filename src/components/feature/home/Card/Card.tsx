@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 import { CardProps } from "./lib/Card";
+import { Posts } from "@prisma/client";
 
 import heart from "@/assets/heart.svg";
 
@@ -15,7 +16,7 @@ import {
   LikeHeart,
 } from "./lib/styled";
 
-const Card = ({ item }: { item: CardProps }) => {
+const Card = ({ item }: { item: Posts }) => {
   const router = useRouter();
 
   const handleRoute = () => router.push(`/blog/${item.id}`)

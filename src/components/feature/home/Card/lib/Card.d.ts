@@ -1,3 +1,5 @@
 import { Posts } from "@prisma/client";
 
-export type CardProps = Posts & {};
+export interface CardProps extends Posts {
+    
+};
