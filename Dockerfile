@@ -20,11 +20,17 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# ENV S3_UPLOAD_KEY $S3_UPLOAD_KEY
+# ENV S3_UPLOAD_SECRET $S3_UPLOAD_SECRET
+# ENV S3_UPLOAD_BUCKET $S3_UPLOAD_BUCKET
+# ENV S3_UPLOAD_REGION $S3_UPLOAD_REGION
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+RUN npx prisma generate
 RUN yarn build
 
 FROM base AS runner
@@ -36,6 +42,7 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --chown=nextjs:nodejs prisma ./prisma/
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
