@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 import { CardProps } from "./lib/Card";
@@ -15,8 +16,12 @@ import {
 } from "./lib/styled";
 
 const Card = ({ item }: { item: CardProps }) => {
+  const router = useRouter();
+
+  const handleRoute = () => router.push(`/blog/${item.id}`)
+
   return (
-    <Container>
+    <Container onClick={handleRoute}>
       <ThumbNail image={item.thumbnailImage} />
       <TextContainer>
         <h4>{item.title}</h4>
