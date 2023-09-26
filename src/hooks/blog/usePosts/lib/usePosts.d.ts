@@ -4,6 +4,6 @@ export interface PostsResponse extends Posts {
   tag: { tag: string }[];
 }
 
-export interface PostsCallback extends Posts {
+export type PostsCallback = Posts & {
   tag: string[];
 }

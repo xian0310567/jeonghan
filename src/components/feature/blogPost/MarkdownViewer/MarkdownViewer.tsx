@@ -12,13 +12,11 @@ import "prismjs/themes/prism.css";
 import "@toast-ui/editor/dist/toastui-editor-viewer.css";
 
 const MarkdownViewer = (props: MarkdownViewerProps) => {
-  const post = props.post;
-
   return (
     <Container>
-      <Title>{post.title}</Title>
+      <Title>{props.post.title}</Title>
       <Viewer
-        initialValue={post.contents}
+        initialValue={props.post.contents}
         plugins={[[codeSyntaxHighlight, { highlighter: Prism }]]}
       />
     </Container>

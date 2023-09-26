@@ -1,3 +1,3 @@
 export { default } from "./Card";
 
-export type { CardProps } from "./lib/Card.interface";
+export type { CardProps } from "./lib/Card";

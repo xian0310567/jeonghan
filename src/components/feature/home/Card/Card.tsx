@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { CardProps } from "./lib/Card.interface";
+import { CardProps } from "./lib/Card";
 
 import heart from "@/assets/heart.svg";
 

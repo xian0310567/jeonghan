@@ -6,6 +6,13 @@ interface TagListCallback {
   length: number;
 }
 
+interface TagMaps {
+  tag: string;
+  _count: {
+    tag: number;
+  }
+}
+
 const prisma = new PrismaClient();
 
 const tagList = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -16,7 +23,7 @@ const tagList = async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  const response: TagListCallback[] = await tags.map((tag) => {
+  const response: TagListCallback[] = await tags.map((tag: TagMaps) => {
     return { tag: tag.tag, length: tag._count.tag };
   });
 

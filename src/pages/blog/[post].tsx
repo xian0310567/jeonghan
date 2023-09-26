@@ -17,7 +17,7 @@ const MarkdownViewer = dynamic(
 const post = (props: { post: PostsCallback }) => {
   return (
     <Container>
-      <MarkdownViewer post={props.post} />
+      <MarkdownViewer post={props.post}/>
       <CommentViewer />
     </Container>
   );
