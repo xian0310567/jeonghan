@@ -44,7 +44,7 @@ ENV S3_UPLOAD_REGION=$S3_UPLOAD_REGION
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN npx prisma generate
-RUN npx prisma db push
+RUN npx prisma migrate deploy
 RUN yarn build
 
 FROM base AS runner
