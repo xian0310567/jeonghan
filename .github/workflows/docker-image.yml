@@ -67,4 +67,4 @@ jobs:
       - name: Docker run
         run: |
           docker stop ${{ env.NAME }} && docker rm ${{ env.NAME }} && docker rmi ${{ env.DOCKER_IMAGE }}:latest
-          docker run -d -p 80:3000 --network blog -e DATABASE_URL=${{ secrets.DATABASE_URL }} -e NEXT_PUBLIC_BASE_URL_LOCAL=${{ secrets.NEXT_PUBLIC_BASE_URL_LOCAL }} -e 3_UPLOAD_KEY=${{ secrets.S3_UPLOAD_KEY }} -e S3_UPLOAD_SECRET=${{ secrets.S3_UPLOAD_SECRET }} -e S3_UPLOAD_BUCKET=${{ secrets.S3_UPLOAD_BUCKET }} -e S3_UPLOAD_REGION=${{ secrets.S3_UPLOAD_REGION }} --name go_cicd --restart always ${{ env.DOCKER_IMAGE }}:latest
+          docker run -d -p 80:3000 --network blog -e DATABASE_URL=${{ secrets.DATABASE_URL }} -e NEXT_PUBLIC_BASE_URL_LOCAL=${{ secrets.NEXT_PUBLIC_BASE_URL_LOCAL }} -e S3_UPLOAD_KEY=${{ secrets.S3_UPLOAD_KEY }} -e S3_UPLOAD_SECRET=${{ secrets.S3_UPLOAD_SECRET }} -e S3_UPLOAD_BUCKET=${{ secrets.S3_UPLOAD_BUCKET }} -e S3_UPLOAD_REGION=${{ secrets.S3_UPLOAD_REGION }} --name go_cicd --restart always ${{ env.DOCKER_IMAGE }}:latest
