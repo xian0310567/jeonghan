@@ -6,7 +6,7 @@ const Description = () => {
   return (
     <div className={styled.container}>
       <span className={styled.text}>
-        저는 1년차 프론트엔드 개발자 이정한입니다. <br />
+        저는 3년차 프론트엔드 개발자 이정한입니다. <br />
         쉽고, 재밌고, 남다르게 표현하는 걸 좋아합니다.
         <br />
         <br />
