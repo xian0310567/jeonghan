@@ -8,6 +8,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Admin {
+  id        Int          @id @default(autoincrement())
+  key       String       @db.VarChar(255)
+}
+
 model Posts {
   id        Int           @id @default(autoincrement())
   title     String        @db.VarChar(255)
