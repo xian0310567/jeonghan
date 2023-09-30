@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "prisma:migrate": "npx prisma migrate dev init",
-    "prisma:studio": "npx prisma studio"
+    "prisma:studio": "npx prisma studio",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@next/font": "13.3.0",
@@ -31,13 +33,23 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-notion": "^0.10.0",
+    "storybook": "^7.4.5",
     "styled-components": "^6.0.4",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.0-alpha.3",
+    "@storybook/addon-interactions": "^7.5.0-alpha.3",
+    "@storybook/addon-links": "^7.5.0-alpha.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.0-alpha.3",
+    "@storybook/nextjs": "^7.5.0-alpha.3",
+    "@storybook/react": "^7.5.0-alpha.3",
+    "@storybook/testing-library": "^0.2.1",
     "@types/lodash": "^4.14.198",
     "@types/prismjs": "^1.26.0",
     "@types/styled-components": "^5.1.26",
+    "eslint-plugin-storybook": "^0.6.14",
     "prisma": "^5.2.0"
   }
 }
