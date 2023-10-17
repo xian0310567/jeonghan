@@ -27,9 +27,12 @@ model Posts {
 }
 
 model Comments {
-  id        Int      @id @default(autoincrement())
-  post      Posts    @relation(fields: [postID], references: [id])
-  postID    Int
+  id         Int      @id @default(autoincrement())
+  post       Posts    @relation(fields: [postID], references: [id])
+  postID     Int
+  commenter  String   @db.VarChar(255)
+  comments   String   @db.Text
+  createdAt  DateTime @default(now())
 }
 
 model Tag {
