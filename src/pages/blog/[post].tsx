@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import dynamic from "next/dynamic";
 
 import Container from "@/components/atoms/Container";
@@ -16,10 +17,15 @@ const MarkdownViewer = dynamic(
 
 const post = (props: { post: PostsCallback }) => {
   return (
-    <Container>
-      <MarkdownViewer post={props.post}/>
-      <CommentViewer />
-    </Container>
+    <>
+      <Head>
+        <title>{props.post.title}</title>
+      </Head>
+      <Container>
+        <MarkdownViewer post={props.post} />
+        <CommentViewer />
+      </Container>
+    </>
   );
 };
 
