@@ -17,7 +17,12 @@ const MarkdownViewer = dynamic(
   { ssr: false }
 );
 
-const post = (props: { post: PostsCallback; comments: CommentResponse }) => {
+type PostProps = {
+  post: PostsCallback;
+  comments: CommentResponse[];
+};
+
+const post = (props: PostProps) => {
   return (
     <>
       <Head>
@@ -25,7 +30,7 @@ const post = (props: { post: PostsCallback; comments: CommentResponse }) => {
       </Head>
       <Container>
         <MarkdownViewer post={props.post} />
-        <CommentViewer />
+        <CommentViewer comments={props.comments} />
       </Container>
     </>
   );
